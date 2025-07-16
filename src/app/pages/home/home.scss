@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  height: 100vh;
+  background-image: url('/assets/images/fondoLandingPage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.8); // ← oscurece la imagen
+  color: white;
+  text-align: center;
+  padding-top: 5rem;
+}

@@ -1,0 +1,68 @@
+:host {
+  display: block;
+  height: 100vh;
+  background-image: url('/assets/images/fondoLandingPage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.8);
+  color: white;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.catalogo-simple {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(25, 25, 35, 0.7); // Fondo oscuro semitransparente
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px); // Efecto de desenfoque sutil
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    color: #e8e0d2; // Color crema que combina con madera
+    border-bottom: 2px solid #5d8aa8; // Borde azul acuoso
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+
+    li {
+      padding: 12px 15px;
+      margin-bottom: 8px;
+      background: rgba(60, 45, 30, 0.6); // Fondo marrón semitransparente
+      border-radius: 5px;
+      font-size: 1.2rem;
+      text-align: left;
+      border-left: 4px solid #8b4513; // Borde izquierdo color madera oscura
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-between;
+
+      &:hover {
+        transform: translateX(5px);
+        background: rgba(70, 55, 40, 0.7);
+      }
+
+      // Separador entre título y precio
+      span:first-child {
+        flex-grow: 1;
+      }
+      
+      span:last-child {
+        color: #f0e68c; // Color amarillo mostaza para precios
+        font-weight: bold;
+      }
+    }
+  }
+}

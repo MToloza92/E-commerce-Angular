@@ -1,0 +1,9 @@
+<div class="catalogo-simple">
+  <h2>Catálogo de libros</h2>
+  <ul>
+    <li *ngFor="let b of books">
+      <span>{{ b.title }}</span>
+      <span>${{ b.price }}</span>
+    </li>
+  </ul>
+</div>
