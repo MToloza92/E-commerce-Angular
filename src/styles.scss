@@ -1,5 +1,109 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* RESET CSS (10px = 1rem + scroll smooth + reseteo completo) */
+:root {
+    scroll-behavior: smooth;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    font-size: 1.6rem; /* Base 16px (10px × 1.6) */
+    line-height: 1.6;
+}
+
+/* Elementos principales */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+    display: block;
+}
+
+/* Reset de tipografía */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+
+p, pre {
+    margin: 0;
+}
+
+/* Listas */
+ul, ol {
+    list-style: none;
+}
+
+/* Elementos interactivos */
+button, input, select, textarea {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+    appearance: button;
+}
+
+/* Imágenes y multimedia */
+img, picture, svg, video, canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablas */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Elementos varios */
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+}
+
+/* CSS HEX */
+:root {
+  --eastern-blue: #1e81b0;
+  --green-white: #eeeee4;
+  --burnt-sienna: #e28743;
+  --tacao: #eab676;
+  --glacier: #76b5c5;
+  --eternity: #21130d;
+  --burnt-umber: #873e23;
+  --powder-blue: #abdbe3;
+  --catalina-blue: #063970;
+  --chathams-blue: #154c79;
 }

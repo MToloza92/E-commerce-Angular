@@ -1,4 +1,26 @@
-<nav>
-  <a routerLink="/" routerLinkActive="active">Inicio</a> |
-  <a routerLink="/products" routerLinkActive="active">Libros</a>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><nav>
+  
+  <div>
+    <a routerLink="/">
+      <img src="/assets/images/logoAleph.png" alt="alephlogo" class="cLogoImg">
+    </a>
+  </div>
+  <div class="nav-links">
+    <a routerLink="/products" routerLinkActive="active">
+      <i class="fas fa-book"></i>
+      Libros
+    </a>
+    <a href="#">
+      <i class="fas fa-search"></i>
+      Buscar
+    </a>
+    <a href="#">
+      <i class="fas fa-user"></i>
+      Cuenta
+    </a>
+    <a href="#" class="cart-icon">
+      <i class="fas fa-shopping-cart"></i>
+      <div class="cart-count">0</div>
+    </a>
+  </div>
 </nav>
