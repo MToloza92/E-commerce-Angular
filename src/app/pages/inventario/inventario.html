@@ -1,0 +1,38 @@
+<!-- src/app/pages/inventario/inventario.component.html -->
+<div class="inventario-container">
+  <h2>Gestión de Inventario</h2>
+  
+  <!-- Muestra el rol actual -->
+  <div class="rol-info">
+    Rol actual: <strong>{{ rol | uppercase }}</strong>
+  </div>
+
+  <!-- Listado de productos -->
+  <table class="productos-table">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.cantidad }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Botón solo visible para admin -->
+  <button 
+    *ngIf="rol === 'admin'" 
+    (click)="vaciarInventario()"
+    class="vaciar-btn">
+    Vaciar Inventario
+  </button>
+
+  <!-- Mensaje cuando no hay productos -->
+  <p *ngIf="productos.length === 0" class="empty-message">
+    El inventario está vacío
+  </p>
+</div>

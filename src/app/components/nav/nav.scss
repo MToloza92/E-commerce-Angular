@@ -135,6 +135,34 @@ nav {
   }
 }
 
+.panel-ingreso {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255,255,255,0.7); /* Fondo semi-transparente */
+  gap: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  z-index: 1000;
+  position: fixed;
+  top: 7.5rem;
+  right: 8rem;
+
+  button {
+    background-color: var(--catalina-blue);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--eastern-blue);
+    }
+  }
+}
+
+
 /* Responsive para móviles */
 @media (max-width: 768px) {
   nav {

@@ -14,7 +14,7 @@
       <i class="fas fa-search"></i>
       Buscar
     </a>
-    <a href="#">
+    <a href="#" (click)="toggleOpciones()">
       <i class="fas fa-user"></i>
       Cuenta
     </a>
@@ -24,3 +24,8 @@
     </a>
   </div>
 </nav>
+
+<div *ngIf="mostrarOpciones" class="panel-ingreso">
+  <button (click)="guardarRol('admin')">Admin</button>
+  <button (click)="guardarRol('vendedor')">Vendedor</button>
+</div>
