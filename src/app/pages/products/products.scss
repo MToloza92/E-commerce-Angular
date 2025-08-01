@@ -1,6 +1,6 @@
 :host {
   display: block;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url('/assets/images/bgProducts.jpeg');
   background-size: cover;
   background-position: center;
@@ -8,61 +8,109 @@
   filter: brightness(0.8);
   color: white;
   text-align: center;
-  padding-top: 2rem;
+  padding: 2rem;
 }
 
 .catalogo {
-  max-width: 800px;
+  max-width: 120rem;
   margin: 0 auto;
-  background: rgba(25, 25, 35, 0.7); // Fondo oscuro semitransparente
-  border-radius: 10px;
-  padding: 20px;
+  background: rgba(25, 25, 35, 0.6);
+  border-radius: 12px;
+  padding: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px); // Efecto de desenfoque sutil
+  backdrop-filter: blur(6px);
 
   h2 {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    color: #e8e0d2;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    color: #e8e0d2; // Color crema que combina con madera
-    border-bottom: 2px solid #5d8aa8; // Borde azul acuoso
-    padding-bottom: 10px;
-    display: inline-block;
   }
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 40rem; // Ancho máximo para la lista
+  .catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 2fr));
+    gap: 2.5rem;
+    justify-items: center;
+  }
+}
+.grid-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  padding: 1rem;
+}
 
-    li {
-      padding: 12px 15px;
-      margin-bottom: 8px;
-      background: rgba(60, 45, 30, 0.6); // Fondo marrón semitransparente
-      border-radius: 0.5rem;
-      font-size: 1.2rem;
-      text-align: left;
-      border-left: 0.6rem solid #8b4513; // Borde izquierdo color madera oscura
-      transition: transform 0.3s ease;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      display: flex;
-      justify-content: space-between;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-      &:hover {
-        transform: translateX(5px);
-        background: rgba(70, 55, 40, 0.7);
-      }
+.modal-content {
+  background: rgba(25, 25, 35, 0.95);
+  color: #e8e0d2;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
 
-      // Separador entre título y precio
-      span:first-child {
-        flex: 1;
-      }
-      
-      span:last-child {
-        color: #f0e68c; // Color amarillo mostaza para precios
-        font-weight: bold;
-      }
-    }
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.modal-content h3 {
+  font-size: 1.8rem;
+  color: #f0e68c;
+}
+
+.modal-content .author {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.modal-content .description {
+  margin: 1rem 0;
+}
+
+.modal-content .price {
+  font-weight: bold;
+  color: #f0e68c;
+  font-size: 1.2rem;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

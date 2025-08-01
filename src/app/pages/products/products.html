@@ -1,9 +1,21 @@
 <div class="catalogo">
   <h2>Catálogo de libros</h2>
-  <ul>
-    <li *ngFor="let b of books">
-      <span>{{ b.title }}</span>
-      <span>${{ b.price }}</span>
-    </li>
-  </ul>
+
+  <div class="grid-cards">
+    <app-card-book *ngFor="let book of books" [book]="book" (seleccionar)="showDetails($event)">
+    </app-card-book>
+  </div>
+</div>
+
+<!-- Modal para detalle -->
+<div class="modal" *ngIf="selectedBook">
+  <div class="modal-content">
+    <span class="close" (click)="closeDetails()">×</span>
+
+    <img [src]="selectedBook.cover" [alt]="selectedBook.title">
+    <h3>{{ selectedBook.title }}</h3>
+    <p class="author">Autor: {{ selectedBook.author }}</p>
+    <p class="description">{{ selectedBook.description }}</p>
+    <p class="price">${{ selectedBook.price }}</p>
+  </div>
 </div>
