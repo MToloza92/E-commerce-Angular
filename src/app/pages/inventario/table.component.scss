@@ -1,0 +1,69 @@
+/* En tu archivo de estilos del componente */
+:host {
+  display: block;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  font-size: rem;
+}
+
+/* Contenedor principal */
+.inventario-container {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabla - usa ::ng-deep con selectores más específicos */
+:host ::ng-deep .mat-mdc-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 1.3rem !important; // Forzar tamaño
+
+  .mat-mdc-header-cell {
+    background-color: #063970 !important;
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.6rem !important;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .mat-mdc-cell {
+    padding: 0.9rem 1rem !important;
+    font-size: 1rem !important;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .mat-mdc-header-row {
+    height: 56px !important;
+  }
+
+  .mat-mdc-row:hover {
+    background-color: rgba(6, 57, 112, 0.08) !important;
+    cursor: pointer;
+  }
+}
+
+/* Paginador */
+:host ::ng-deep .mat-mdc-paginator {
+  margin-top: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem !important;
+
+  .mat-mdc-paginator-range-label,
+  .mat-mdc-paginator-page-size-label,
+  .mat-mdc-paginator-navigation button {
+    font-size: 1.5rem !important;
+    color: #063970;
+    font-weight: bold;
+  }
+}

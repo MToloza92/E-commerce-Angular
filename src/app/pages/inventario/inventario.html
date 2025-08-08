@@ -1,7 +1,7 @@
 <!-- src/app/pages/inventario/inventario.component.html -->
 <div class="inventario-container">
   <h2>Gestión de Inventario</h2>
-  
+
   <!-- Muestra el rol actual -->
   <div class="rol-info">
     Rol actual: <strong>{{ rol | uppercase }}</strong>
@@ -24,8 +24,8 @@
   </table>
 
   <!-- Botón solo visible para admin -->
-  <button 
-    *ngIf="rol === 'admin'" 
+  <button
+    *ngIf="rol === 'admin'"
     (click)="vaciarInventario()"
     class="vaciar-btn">
     Vaciar Inventario
@@ -36,3 +36,5 @@
     El inventario está vacío
   </p>
 </div>
+
+<app-table></app-table>
