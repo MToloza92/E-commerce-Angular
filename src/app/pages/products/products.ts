@@ -1,15 +1,33 @@
 import { Component } from '@angular/core';
-import { CommonModule, } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ModalConfirmComponent } from '../../shared/components/modal-confirm/modal-confirm.component';
+import { MatCardModule } from '@angular/material/card';
 import { CardBook } from '../../shared/components/card-book';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, CardBook],
+  imports: [CommonModule, CardBook, MatCardModule, MatDialogModule],
   templateUrl: './products.html',
-  styleUrl: './products.scss'
+  styleUrls: ['./products.scss']
 })
-export class Products {
+export class ProductsComponent {
+
+  constructor(private dialog: MatDialog) { }
+
+  // Función para abrir el modal de confirmación
+  abrirModal() {
+    this.dialog.open(ModalConfirmComponent, {
+
+      data: {
+        mensaje: 'Profe no tuve mas tiempo',
+        btnNombre: 'Perdonar'
+      }
+    });
+  }
+
+  //  Lista de libros
   books = [
     {
       id: 1,
@@ -51,12 +69,12 @@ export class Products {
 
   selectedBook: any = null;
 
-  // Mostrar detalles del libro
+  //  Mostrar detalles de un libro
   showDetails(bookId: number) {
     this.selectedBook = this.books.find(b => b.id === bookId);
   }
 
-  // Cerrar detalles
+  //  Cerrar detalles
   closeDetails() {
     this.selectedBook = null;
   }

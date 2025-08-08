@@ -1,100 +1,129 @@
-/* RESET CSS (10px = 1rem + scroll smooth + reseteo completo) */
+/* ===========================
+   0. IMPORTAR DEPENDENCIAS
+   =========================== */
+@use '@angular/material' as mat;
+
+/* ===========================
+   1. RESET CSS GLOBAL
+   =========================== */
+
+/* Tamaño base y smooth scroll */
 :root {
-    scroll-behavior: smooth;
-    font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  /* 1rem = 10px */
 }
 
+/* Reseteo universal */
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    font-size: 1.6rem; /* Base 16px (10px × 1.6) */
-    line-height: 1.6;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  font-size: 1.8rem;
+  /* Base 16px (10px × 1.6) */
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Elementos principales */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, main, menu, nav, section {
-    display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
 }
 
-/* Reset de tipografía */
-h1, h2, h3, h4, h5, h6 {
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    margin: 0;
-}
-
-p, pre {
-    margin: 0;
+/* Tipografía */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 /* Listas */
-ul, ol {
-    list-style: none;
+ul,
+ol {
+  list-style: none;
 }
 
-/* Elementos interactivos */
-button, input, select, textarea {
-    font: inherit;
-    color: inherit;
-    background: transparent;
-    border: none;
-    outline: none;
-    margin: 0;
-    padding: 0;
+/* Inputs y botones */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-    cursor: pointer;
-    -webkit-appearance: button;
-    appearance: button;
+  cursor: pointer;
+  -webkit-appearance: button;
+  appearance: button;
 }
 
-/* Imágenes y multimedia */
-img, picture, svg, video, canvas {
-    display: block;
-    max-width: 100%;
-    height: auto;
+/* Multimedia */
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Tablas */
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-/* Elementos varios */
+/* Otros */
 hr {
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
 }
 
-/* CSS HEX */
+/* Paleta personalizada (variables CSS) */
 :root {
   --eastern-blue: #1e81b0;
   --green-white: #eeeee4;
@@ -106,4 +135,36 @@ a {
   --powder-blue: #abdbe3;
   --catalina-blue: #063970;
   --chathams-blue: #154c79;
+}
+
+/* ===========================
+   2. ANGULAR MATERIAL THEME
+   =========================== */
+
+html {
+  @include mat.theme((color: (primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
+}
+
+body {
+  /* Forzamos esquema claro por defecto */
+  color-scheme: light;
+
+  /* Colores base de Material */
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+}
+
+/* ===========================
+   3. AJUSTES FINALES
+   =========================== */
+html,
+body {
+  height: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

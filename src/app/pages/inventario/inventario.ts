@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Producto } from 'src/app/interfaces/productoInterface';
+import { Producto } from 'src/app/shared/interfaces/productoInterface';
+import { TableComponent } from './table.component';
 
 @Component({
   selector: 'app-inventario',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TableComponent],
   templateUrl: './inventario.html',
   styleUrls: ['./inventario.scss']
 })
@@ -18,15 +19,6 @@ export class Inventario implements OnInit {
     if (rolGuardado) {
       this.rol = rolGuardado;
     }
-
-    // Inicializar productos
-    this.productos = [
-      { nombre: 'Caminos del Alma', cantidad: 12 },
-      { nombre: 'Cruce de Caminos', cantidad: 5 },
-      { nombre: 'Caminos Encontrados', cantidad: 8 },
-      { nombre: 'Al Final del Camino', cantidad: 3},
-      
-    ];
   }
 
   vaciarInventario(): void {

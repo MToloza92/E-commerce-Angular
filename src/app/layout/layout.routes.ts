@@ -2,7 +2,7 @@
 import { Routes } from '@angular/router';
 import { Layout } from './layout';
 import { Home } from '../pages/home/home';
-import { Products } from '../pages/products/products';
+import { ProductsComponent } from '../pages/products/products';
 import { Inventario } from '../pages/inventario/inventario';
 
 export const layoutRoutes: Routes = [
@@ -11,7 +11,7 @@ export const layoutRoutes: Routes = [
     component: Layout, // <-- Layout principal
     children: [
       { path: '', component: Home },
-      { path: 'products', component: Products },
+      { path: 'products', component: ProductsComponent },
       { path: 'inventario', component: Inventario },
     ],
   },
